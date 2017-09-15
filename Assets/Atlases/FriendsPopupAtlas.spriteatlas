@@ -8,54 +8,80 @@ SpriteAtlas:
   m_Name: FriendsPopupAtlas
   m_EditorData:
     textureSettings:
+      serializedVersion: 2
       anisoLevel: 1
       compressionQuality: 50
       maxTextureSize: 2048
       textureCompression: 0
-      colorSpace: 1
       filterMode: 1
       generateMipMaps: 0
       readable: 0
       crunchedCompression: 0
+      sRGB: 0
     platformSettings: []
     packingParameters:
-      paddingPower: 2
+      serializedVersion: 2
+      padding: 4
       blockOffset: 1
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 1
     packedHash:
       serializedVersion: 2
-      Hash: 3bc6c11a14c6262ebeae2adf0145afe4
+      Hash: 2bb45a2281ce9c757cca27bb44597766
     variantMultiplier: 1
     bindAsDefault: 1
     finalFormat: 4
-    hashString: 3bc6c11a14c6262ebeae2adf0145afe4
-    totalSpriteSurfaceArea: 100122
+    hashString: 2bb45a2281ce9c757cca27bb44597766
+    totalSpriteSurfaceArea: 530351
     packables:
     - {fileID: 2800000, guid: 70f2a001eb00b0f4590e3ed8a0f35452, type: 3}
     - {fileID: 2800000, guid: e2b2f80a3dd912b4f88bab36dd7d6abd, type: 3}
     - {fileID: 2800000, guid: 593336f59080bb3478eb24cbeb534946, type: 3}
     - {fileID: 2800000, guid: bdef4e9aaca604eb6b6935c56f38a1b7, type: 3}
     - {fileID: 2800000, guid: a1c2e96333db745f88ba7541dbbad00a, type: 3}
+    - {fileID: 2800000, guid: a82175ef270d54317bda4ad34bedc290, type: 3}
+    - {fileID: 2800000, guid: facba418957b74c2fa7b5801924bfc8d, type: 3}
+    - {fileID: 2800000, guid: c93408207c33547f082bdde20273894e, type: 3}
+    - {fileID: 21300000, guid: d68d876499e874d4b84811e2b9f6abf3, type: 3}
+    - {fileID: 2800000, guid: f5195c8845125409da02c60e122525b7, type: 3}
+    - {fileID: 2800000, guid: fc8b609b114a34ba988f4b4d492daeea, type: 3}
     packedSpriteRenderDataKeys:
+    - facba418957b74c2fa7b5801924bfc8d: 21300000
+    - a82175ef270d54317bda4ad34bedc290: 21300000
     - a1c2e96333db745f88ba7541dbbad00a: 21300000
+    - f5195c8845125409da02c60e122525b7: 21300000
+    - d68d876499e874d4b84811e2b9f6abf3: 21300000
     - bdef4e9aaca604eb6b6935c56f38a1b7: 21300000
     - e2b2f80a3dd912b4f88bab36dd7d6abd: 21300000
     - 593336f59080bb3478eb24cbeb534946: 21300000
+    - c93408207c33547f082bdde20273894e: 21300000
+    - fc8b609b114a34ba988f4b4d492daeea: 21300000
     - 70f2a001eb00b0f4590e3ed8a0f35452: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: facba418957b74c2fa7b5801924bfc8d, type: 3}
+  - {fileID: 21300000, guid: a82175ef270d54317bda4ad34bedc290, type: 3}
   - {fileID: 21300000, guid: a1c2e96333db745f88ba7541dbbad00a, type: 3}
+  - {fileID: 21300000, guid: f5195c8845125409da02c60e122525b7, type: 3}
+  - {fileID: 21300000, guid: d68d876499e874d4b84811e2b9f6abf3, type: 3}
   - {fileID: 21300000, guid: bdef4e9aaca604eb6b6935c56f38a1b7, type: 3}
   - {fileID: 21300000, guid: e2b2f80a3dd912b4f88bab36dd7d6abd, type: 3}
   - {fileID: 21300000, guid: 593336f59080bb3478eb24cbeb534946, type: 3}
+  - {fileID: 21300000, guid: c93408207c33547f082bdde20273894e, type: 3}
+  - {fileID: 21300000, guid: fc8b609b114a34ba988f4b4d492daeea, type: 3}
   - {fileID: 21300000, guid: 70f2a001eb00b0f4590e3ed8a0f35452, type: 3}
   m_PackedSpriteNamesToIndex:
+  - ref11
+  - ref10
   - ref_FbBar
+  - ref07
+  - ref06
   - ref_BgYellow
   - window4
   - window6
+  - ref_RedBar
+  - button_green
   - icon_friend
   m_Tag: FriendsPopupAtlas
   m_IsVariant: 0

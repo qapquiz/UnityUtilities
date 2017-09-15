@@ -47,7 +47,7 @@ public class Service {
 		{
 				case HttpMethod.GET:
 					using (UnityWebRequest www = UnityWebRequest.Get(url)) {
-						www.Send();
+						www.SendWebRequest();
 						while (!www.isDone && !cancellationToken.IsCancellationRequested) {
 							yield return null;
 						}
@@ -82,7 +82,7 @@ public class Service {
 		{
 				case HttpMethod.GET:
 					using (UnityWebRequest www = UnityWebRequest.Get(url)) {
-						www.Send();
+						www.SendWebRequest();
 						while (!www.isDone && !cancellationToken.IsCancellationRequested) {
 							yield return null;
 						}
@@ -116,7 +116,7 @@ public class Service {
 		switch (httpMethod) {
 			case HttpMethod.POST: 
 				using (UnityWebRequest www = UnityWebRequest.Post(url, formData)) {
-					www.Send();
+					www.SendWebRequest();
 					while (!www.isDone && !cancellationToken.IsCancellationRequested) {
 						yield return null;
 					}
@@ -144,7 +144,7 @@ public class Service {
 		switch (httpMethod) {
 			case HttpMethod.PUT:
 				using (UnityWebRequest www = UnityWebRequest.Put(url, formData)) {
-					www.Send();
+					www.SendWebRequest();
 					while (!www.isDone && !cancellationToken.IsCancellationRequested) {
 						yield return null;
 					}

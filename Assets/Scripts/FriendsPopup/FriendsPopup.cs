@@ -126,6 +126,43 @@ namespace Undefined.FriendsPopup {
 				m_friendsReference = value;
 			}
 		}
+
+		[SerializeField]
+		private GameObject m_friendsReferenceActive;
+		public GameObject FriendsReferenceActive {
+			set {
+				m_friendsReferenceActive = value;
+			}
+
+			get {
+				return m_friendsReferenceActive;
+			}
+		}
+
+		[SerializeField]
+		private GameObject m_friendsReferenceInactive;
+		public GameObject FriendsReferenceInactive {
+			set {
+				m_friendsReferenceInactive = value;
+			}
+
+			get {
+				return m_friendsReferenceInactive;
+			}
+		}
+
+
+		[SerializeField]
+		private GameObject m_friendsReferenceNew;
+		public GameObject FriendsReferenceNew {
+			set {
+				m_friendsReferenceNew = value;
+			}
+			
+			get {
+				return m_friendsReferenceNew;
+			}
+		}
 		
 
 		private State handler(State state, Action action) {
@@ -178,6 +215,24 @@ namespace Undefined.FriendsPopup {
 
 					m_friendsList.SetActive(false);
 					m_friendsReference.SetActive(true);
+
+					switch (state.FriendsReference.Status) {
+						case FriendsReferenceStatus.Active:
+							m_friendsReferenceActive.SetActive(true);
+							m_friendsReferenceInactive.SetActive(false);
+							m_friendsReferenceNew.SetActive(false);
+							break;
+						case FriendsReferenceStatus.Inactive:
+							m_friendsReferenceInactive.SetActive(true);
+							m_friendsReferenceActive.SetActive(false);
+							m_friendsReferenceNew.SetActive(false);
+							break;
+						case FriendsReferenceStatus.New:
+							m_friendsReferenceNew.SetActive(true);
+							m_friendsReferenceActive.SetActive(false);
+							m_friendsReferenceInactive.SetActive(false);
+							break;
+					}
 
 					UpdateHeader(state.Basic.Header);
 					ResizeTextHeader(width: 320f, height: 48.2f);
@@ -249,8 +304,8 @@ namespace Undefined.FriendsPopup {
 				m_tabFriendsReferenceImage.sprite = m_highlightSpriteTab;
 				m_friendsStore.Dispatch(new ActionOpenFriendsReference() {
 					ActionType = ActionType.OpenFriendsReference,
-					Header = "รางวัลกิจกรรมชวนเพื่อน",
-					Status = FriendsReferenceStatus.Active
+					Header = "รางวัลสำหรับเพื่อนเก่า",
+					Status = FriendsReferenceStatus.New
 				});
 			} else {
 				m_tabFriendsReferenceImage.sprite = m_normalSpriteTab;

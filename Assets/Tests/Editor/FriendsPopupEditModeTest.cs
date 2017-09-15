@@ -6,6 +6,7 @@ using NUnit.Framework;
 using System.Collections;
 using Undefined.FriendsPopup;
 
+[Category("FriendsPopup")]
 public class FriendsPopupEditModeTest {
 
 	GameObject friendsPopup;
@@ -31,7 +32,11 @@ public class FriendsPopupEditModeTest {
 		friendsPopupScript.TabFriendsReferenceImage = friendsPopupScript.TabFriendsReference.AddComponent<Image>();
 
 		friendsPopupScript.FriendsList = new GameObject();
+
 		friendsPopupScript.FriendsReference = new GameObject();
+		friendsPopupScript.FriendsReferenceActive = new GameObject();
+		friendsPopupScript.FriendsReferenceInactive = new GameObject();
+		friendsPopupScript.FriendsReferenceNew = new GameObject();
 	}
 
 	[Test]
@@ -59,6 +64,21 @@ public class FriendsPopupEditModeTest {
 		StringAssert.AreEqualIgnoringCase(header, friendsPopupScript.TextHeader.text);
 
 		Assert.IsTrue(friendsPopupScript.TabFriendsReferenceToggle.isOn);
+
+		switch (friendsPopupScript.Store.State.FriendsReference.Status) {
+			case FriendsReferenceStatus.Active:
+				friendsPopupScript.FriendsReferenceActive.SetActive(true);
+				Assert.IsTrue(friendsPopupScript.FriendsReferenceActive.activeInHierarchy);
+				break;
+			case FriendsReferenceStatus.Inactive:
+				friendsPopupScript.FriendsReferenceInactive.SetActive(true);
+				Assert.IsTrue(friendsPopupScript.FriendsReferenceInactive.activeInHierarchy);
+				break;
+			case FriendsReferenceStatus.New:
+				friendsPopupScript.FriendsReferenceNew.SetActive(true);
+				Assert.IsTrue(friendsPopupScript.FriendsReferenceNew.activeInHierarchy);
+				break;
+		}
 
 		Assert.AreEqual(status, friendsPopupScript.Store.State.FriendsReference.Status);
 		Assert.AreEqual(320f, friendsPopupScript.TextHeader.rectTransform.sizeDelta.x);
