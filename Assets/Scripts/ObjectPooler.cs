@@ -1,17 +1,18 @@
-﻿using System.Collections;
+﻿using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
 public class ObjectPoolItem {
-	public int initialAmountToPool;
-	public GameObject objectToPool;
-	public bool shouldExpand;
+	public int InitialAmountToPool;
+	public GameObject ObjectToPool;
+	public bool ShouldExpand;
 }
 
 public class ObjectPooler : MonoBehaviour {
 
-	public static ObjectPooler sharedInstance;
+	public static ObjectPooler SharedInstance;
+	
 	[SerializeField]
 	private List<ObjectPoolItem> itemsToPool;
 
@@ -19,14 +20,14 @@ public class ObjectPooler : MonoBehaviour {
 
 
 	void Awake() {
-		sharedInstance = this;
+		SharedInstance = this;
 	}
 
 	void Start() {
 		pooledObjects = new List<GameObject> ();
 		foreach (ObjectPoolItem item in itemsToPool) {
-			for (int index = 0; index < item.initialAmountToPool; index++) {
-				CreateAndAddToPooledObjects(objectToInstantiate: item.objectToPool);
+			for (int index = 0; index < item.InitialAmountToPool; index++) {
+				CreateAndAddToPooledObjects(objectToInstantiate: item.ObjectToPool);
 			}
 		}
 		
@@ -40,9 +41,9 @@ public class ObjectPooler : MonoBehaviour {
 		}
 
 		foreach (ObjectPoolItem item in itemsToPool) {
-			if (item.objectToPool.CompareTag(tag)) {
-				if (item.shouldExpand) {
-					GameObject obj = CreateAndAddToPooledObjects(item.objectToPool);
+			if (item.ObjectToPool.CompareTag(tag)) {
+				if (item.ShouldExpand) {
+					GameObject obj = CreateAndAddToPooledObjects(item.ObjectToPool);
 					return obj;
 				} 
 			}
