@@ -32,3 +32,11 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# User-specific stuff:
+.idea/**/contentModel.xml
+.idea/**/indexLayout.xml
+.idea/**/modules.xml
+.idea/**/vcs.xml
+.idea/**/workspace\.xml
+.idea/**/riderModule.iml
