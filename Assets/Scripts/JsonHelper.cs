@@ -7,14 +7,14 @@ using System.Text;
 using UnityEngine;
 
 public class JsonHelper : MonoBehaviour {
+	[System.Serializable]
+	public struct Wrapper<T> {
+		public T[] array;
+	}
+	
 	public static T[] FromJsonArray<T>(string json) {
 		string newJson = new StringBuilder().Append("{\"array\": ").Append(json).Append("}").ToString();
 		Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>> (newJson);
 		return wrapper.array;
-	}
-
-	[System.Serializable]
-	public class Wrapper<T> {
-		public T[] array;
 	}
 }
